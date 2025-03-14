@@ -13,34 +13,8 @@ Match Three Game是一个用Java开发的经典三消游戏。游戏中，玩家
 - 🎨 支持自定义图片资源
 - 🔄 自动检测和处理连锁反应
 - 📊 实时分数统计
-- 🎵 游戏音效支持（可选）
-- 📱 在Windows系统上流畅运行
-
-## 🔧 安装指南
-
-### 方法1：直接运行JAR文件（推荐）
-
-1. 确保你的电脑已安装Java运行环境(JRE) 8或更高版本
-2. 下载`MatchThreeGame.jar`文件
-3. 双击JAR文件或在命令行中运行：
-   ```
-   java -jar MatchThreeGame.jar
-   ```
-
-### 方法2：使用批处理文件启动（Windows）
-
-1. 确保你的电脑已安装Java
-2. 下载`MatchThreeGame.jar`和`StartGame.bat`文件
-3. 双击`StartGame.bat`运行游戏
-
-### 方法3：从源代码构建（开发者）
-
-1. 克隆仓库：
-   ```
-   git clone https://github.com/yourusername/match-three-game.git
-   ```
-2. 使用IDE打开项目（推荐使用IntelliJ IDEA或VSCode）
-3. 编译并运行`Game.java`文件
+- 🎵 游戏音效不支持
+- 📱 在Windows系统上不流畅运行
 
 ## 🎮 游戏操作说明
 
@@ -61,29 +35,6 @@ Match Three Game是一个用Java开发的经典三消游戏。游戏中，玩家
 - 连锁反应：额外50分
 - 游戏会保存最高分记录
 
-## 📁 项目结构
-
-```
-MatchThreeGame/
-│
-├── src/main/
-│   ├── Game.java         // 主游戏类和入口点
-│   ├── GamePanel.java    // 游戏面板和渲染
-│   ├── GameBoard.java    // 游戏棋盘逻辑
-│   ├── Tile.java         // 方块类
-│   │
-│   └── resources/        // 资源文件
-│       ├── tile1.png
-│       ├── tile2.png
-│       └── ...
-│
-├── bin/                  // 编译后的class文件
-│
-├── MatchThreeGame.jar    // 打包后的可执行JAR文件
-├── StartGame.bat         // Windows启动脚本
-├── manifest.txt          // JAR清单文件
-└── README.md             // 项目说明文档
-```
 
 ## 🔍 技术细节
 
@@ -107,27 +58,7 @@ MatchThreeGame/
 1. 准备6个PNG格式图片文件（推荐尺寸60x60像素）
 2. 命名为`tile1.png`到`tile6.png`
 3. 放置在`src/main/resources/`目录下
-4. 重新编译运行游戏
-
-### 添加音效（高级）
-
-1. 准备WAV格式音效文件
-2. 放置在`src/main/resources/sounds/`目录
-3. 修改代码添加音效播放支持
-
-## 🐛 常见问题解决
-
-1. **游戏无法启动**
-   - 确认已安装Java并可通过命令行访问
-   - 检查JAR文件是否完整
-
-2. **找不到类错误**
-   - 重新下载完整的JAR文件
-   - 或从源代码重新构建项目
-
-3. **显示问题**
-   - 确保显示分辨率至少为800x600
-   - 检查Java版本是否为8或更高
+4. 重新运行游戏
 
 ## 📝 未来计划
 
@@ -147,10 +78,6 @@ MatchThreeGame/
 4. 推送到分支 (`git push origin feature/amazing-feature`)
 5. 打开一个Pull Request
 
-## 📜 许可证
-
-该项目采用MIT许可证 - 详情请查看[LICENSE](LICENSE)文件。
-
 ## 👏 致谢
 
 - 感谢所有游戏测试者的宝贵反馈
@@ -161,8 +88,7 @@ MatchThreeGame/
 
 如有任何问题或建议，请联系：
 
-- 电子邮件：[your.email@example.com](mailto:your.email@example.com)
-- GitHub Issues: [https://github.com/yourusername/match-three-game/issues](https://github.com/yourusername/match-three-game/issues)
+- 电子邮件：[kinuhataoffense@163.com](mailto:kinuhataoffense@163.com)
 
 ---
 

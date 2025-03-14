@@ -1,6 +1,5 @@
 # Match Three Game
 
-![Game Banner](https://via.placeholder.com/800x200?text=Match+Three+Game)
 
 ## 📖 项目简介
 

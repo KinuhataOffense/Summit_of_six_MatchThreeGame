@@ -37,24 +37,32 @@ public class GamePanel extends JPanel implements MouseListener {
         Graphics2D g2 = (Graphics2D) g;  
         
         // 启用抗锯齿  
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);  
-        
-        // 绘制游戏标题  
-        g2.setColor(Color.WHITE);  
-        g2.setFont(new Font("Arial", Font.BOLD, 30));  
-        g2.drawString("Match Three Game", 160, 50);  
-        
-        // 绘制分数  
-        g2.setFont(new Font("Arial", Font.PLAIN, 20));  
-        g2.drawString("Score: " + score, 240, 80);  
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        int panelWidth = getWidth();
+        int panelHeight = getHeight();
+        int boardWidth = BOARD_SIZE * TILE_SIZE;
+        int boardHeight = BOARD_SIZE * TILE_SIZE;
+
+        int x = (panelWidth - boardWidth) / 2; // Center the board
+        int y = (panelHeight - boardHeight) / 2; // Keep the Y offset constant
+
+        // Draw game title centered
+        g2.setColor(Color.WHITE);
+        g2.setFont(new Font("Arial", Font.BOLD, 30));
+        String title = "Match Three Game";
+        g2.drawString(title, (panelWidth - g2.getFontMetrics().stringWidth(title)) / 2, 50);
+
+        // Draw score centered
+        g2.setFont(new Font("Arial", Font.PLAIN, 20));
+        String scoreText = "Score: " + score;
+        g2.drawString(scoreText, (panelWidth - g2.getFontMetrics().stringWidth(scoreText)) / 2, 80);
         
         // 绘制棋盘背景  
-        g2.setColor(new Color(30, 30, 30));  
-        g2.fillRect(BOARD_OFFSET_X - 5, BOARD_OFFSET_Y - 5,   
-                   BOARD_SIZE * TILE_SIZE + 10, BOARD_SIZE * TILE_SIZE + 10);  
-        
+        g2.setColor(new Color(30, 30, 30));
+        g2.fillRect(x - 5, y - 5, boardWidth + 10, boardHeight + 10);
+
         // 绘制所有方块  
-        g2.translate(BOARD_OFFSET_X, BOARD_OFFSET_Y); // 移动坐标系  
+        g2.translate(x, y); // 移动坐标系
         
         for (int row = 0; row < board.getRows(); row++) {  
             for (int col = 0; col < board.getCols(); col++) {  
@@ -68,10 +76,16 @@ public class GamePanel extends JPanel implements MouseListener {
     
     @Override  
     public void mouseClicked(MouseEvent e) {  
-        // 转换鼠标坐标到棋盘坐标  
-        int mouseX = e.getX() - BOARD_OFFSET_X;  
-        int mouseY = e.getY() - BOARD_OFFSET_Y;  
-        
+        // 转换鼠标坐标到棋盘坐标
+        int panelWidth = getWidth();
+        int panelHeight = getHeight();
+        int boardWidth = BOARD_SIZE * TILE_SIZE;
+        int boardHeight = BOARD_SIZE * TILE_SIZE;
+        int x = (panelWidth - boardWidth) / 2; // Calculate the X position of the board
+        int y = (panelHeight - boardHeight) / 2; // Constant Y offset
+        int mouseX = e.getX() - x;
+        int mouseY = e.getY() - y;
+
         // 检查点击是否在棋盘范围内  
         if (mouseX < 0 || mouseY < 0 ||   
             mouseX >= BOARD_SIZE * TILE_SIZE ||   

@@ -10,14 +10,14 @@ public class Game implements ActionListener {
     private Timer gameTimer;  
     
     public static final int WINDOW_WIDTH = 600;  
-    public static final int WINDOW_HEIGHT = 650;  
+    public static final int WINDOW_HEIGHT = 750;
     private static final int FPS = 60;  
     
     public Game() {  
         // 创建游戏窗口  
         window = new JFrame("Match Three Game");  
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-        window.setResizable(false);  
+        window.setResizable(true);
         window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);  
         
         // 创建游戏面板  
